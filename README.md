@@ -6,8 +6,6 @@ This repository is built upon the foundations provided by [mafda's work on ML wi
 
 - [Overview of the Project](#overview-of-the-project)
 - [Why Streamlit?](#why-use-streamlit)
-- [FastAPI in Action](#what-is-fastapi)
-- [The Power of Hugging Face](#what-is-hugging-face)
 - [System Architecture](#architecture)
 - [Setting Up the Project](#project-setup)
 - [Outcome & Screenshots](#results)
@@ -39,8 +37,8 @@ The main goal of this platform is to provide a tailored approach to anxiety mana
 - Start by cloning this repository:
 
 ```shell
-(base)$: git clone [your-repo-link]
-(base)$: cd [your-repo-directory]
+(base)$: git clone https://github.com/Sahanave/wwcode_hackathon2023_anxiety_management_tool.git
+(base)$: cd wwcode_hackathon2023_anxiety_management_tool
 ```
 
 - Launch the platform:
@@ -53,7 +51,10 @@ $ docker-compose up
 
 ## Outcome & Screenshots
 
-![Sample Outcome](assets/sample-outcome.gif)
+![Sample Input](assets/streamlit-input-sample.png)
+
+
+![Sample Outcome](assets/streamlit-output-sample.gif)
 
 ## Final Thoughts
 
