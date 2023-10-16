@@ -54,7 +54,7 @@ $ docker-compose up
 ![Sample Input](assets/streamlit-input-sample.png)
 
 
-![Sample Outcome](assets/streamlit-output-sample.gif)
+![Sample Outcome](assets/streamlit-output-sample.png)
 
 ## Final Thoughts
 
