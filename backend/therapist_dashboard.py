@@ -66,5 +66,5 @@ def get_user_entry(name):
     query = f'''
             Select * FROM patients where name = '{name}';
             '''
-    patient = pd.read_sql(query, conn).to_dict(orient='dict')
+    patient = pd.read_sql(query, conn).iloc[-1].to_dict()
     return patient
