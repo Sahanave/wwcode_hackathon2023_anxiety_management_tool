@@ -1,6 +1,6 @@
 # Anxiety Management Platform using AI
 
-This repository is built upon the foundations provided by [mafda's work on ML with FastAPI and Streamlit](https://github.com/mafda/ml_with_fastapi_and_streamlit). Our project focuses on developing a personalized AI-driven platform for anxiety management.
+ Our project focuses on developing a personalized AI-driven platform for anxiety management.
 
 ## Table of Contents
 

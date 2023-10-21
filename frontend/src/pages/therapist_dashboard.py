@@ -1,7 +1,7 @@
 """
-1. This project uses code from https://github.com/dclin/gptlab-streamlit which is licensed under the MIT License.  The original license text can be found https://github.com/dclin/gptlab-streamlit/blob/main/LICENSE.
+1. This project uses code from https://github.com/dclin/gptlab-streamlit which is licensed under the MIT License.  
+The original license text can be found https://github.com/dclin/gptlab-streamlit/blob/main/LICENSE.
 """
-
 
 import streamlit as st
 from PIL import Image
