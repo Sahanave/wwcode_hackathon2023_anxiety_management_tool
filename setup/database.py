@@ -44,7 +44,7 @@ def insert_into_patients(demo_info):
             INSERT INTO patients (name, age, city, languages, academics, family) 
             VALUES (?, ?, ?, ?, ?, ?)
             ON CONFLICT(name) 
-            DO UPDATE SET 
+            DO UPDATE SET
                 age = excluded.age, 
                 city = excluded.city, 
                 languages = excluded.languages, 
@@ -77,7 +77,7 @@ def main():
                                     notes TEXT,
                                     previous JSON, 
                                     learning TEXT,
-                                    availiability_time INTEGER,
+                                    availability_time INTEGER,
                                     budget INTERGER,
                                     FOREIGN KEY (patient_id) REFERENCES patients (id)
                                 );"""
