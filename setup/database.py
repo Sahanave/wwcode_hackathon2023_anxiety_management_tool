@@ -32,7 +32,7 @@ def create_table(conn, create_table_sql):
 
 
 def main():
-    database = "aitooldb"
+    database = "aitool.db"
 
     create_demographics_table = """ CREATE TABLE IF NOT EXISTS patients (
                                         id INTEGER PRIMARY KEY,

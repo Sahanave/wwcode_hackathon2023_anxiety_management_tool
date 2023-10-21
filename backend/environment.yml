@@ -2,5 +2,4 @@ name: backend
 channels:
   - conda-forge
 dependencies:
-  - langchain==0.0.315
   - openai==0.28.1

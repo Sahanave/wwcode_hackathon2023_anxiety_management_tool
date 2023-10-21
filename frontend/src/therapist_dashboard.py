@@ -5,18 +5,13 @@ The original license text can be found https://github.com/dclin/gptlab-streamlit
 
 import streamlit as st
 from PIL import Image
-
-# Set the title and caption for the Streamlit app
+from backend.src.threapist_dashboard import generate_response, fetch_user_names
 st.set_page_config(page_title="AI powered Anxiety Management Tool")
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 st.title("AI powered Anxiety Management Tool")
 image = Image.open('sunrise.jpeg')
 st.image(image, caption='Sunrise by the mountains')
 openai_api_key = 'Dummy'
-
-def generate_response(input_text):
-  llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
-  st.info(llm(input_text))
 
 def main():
     """
@@ -54,7 +49,7 @@ def main():
         if not openai_api_key.startswith('sk-'):
             st.warning('Please enter your OpenAI API key!', icon='⚠')
         if submitted and openai_api_key.startswith('sk-'):
-            generate_response(prompt)
+            generate_response(prompt,openai_api_key)
 
 
 if __name__ == "__main__":
