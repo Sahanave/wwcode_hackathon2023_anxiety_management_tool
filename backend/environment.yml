@@ -1,5 +1,0 @@
-name: backend
-channels:
-  - conda-forge
-dependencies:
-  - openai==0.28.1
