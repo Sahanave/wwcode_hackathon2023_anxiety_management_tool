@@ -20,17 +20,9 @@ The main goal of this platform is to provide a tailored approach to anxiety mana
 
 [Streamlit](https://streamlit.io) is a user-friendly Python framework, allowing for the creation of interactive dashboards and web apps without requiring extensive web development experience. Given its compatibility with various ML and visualization libraries, it's an ideal choice for this project.
 
-## FastAPI in Action
-
-[FastAPI](https://fastapi.tiangolo.com) offers a fast and efficient means to build APIs using Python. 
-
-## The Power of Hugging Face
-
-[Hugging Face](https://huggingface.co) brings the might of NLP to our platform. With its vast resources and libraries, we can provide users with intelligent and personalized content to aid their therapeutic journey.
 
 ### Architecture
 
-![System Architecture](assets/streamlit-fastapi.png)
 
 ### Setting Up the Project
 
