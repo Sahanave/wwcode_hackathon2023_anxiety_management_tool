@@ -4,10 +4,11 @@ The original license text can be found https://github.com/dclin/gptlab-streamlit
 """
 
 import streamlit as st
-from backend.therapist_dashboard import validate_open_api_key, fetch_user_names, run_setup
-from frontend.new_patient import new_patient_form
+from backend.therapist_dashboard import validate_open_api_key, fetch_user_names, run_setup, get_user_entry
+from frontend.patient_details import patient_form
 from frontend.session_page import new_session
-
+import pandas as pd
+from collections import defaultdict
 
 st.set_page_config(page_title="AI powered Anxiety Management Tool")
 st.title("AI powered Anxiety Management Tool")
@@ -32,6 +33,7 @@ def choose_patient():
         other_option = st.text_input('Please specify:')
         if other_option:
             st.write(f'You chose: {other_option}')
+            choice = other_option
     else:
         st.write(f'You chose: {choice}')
     return new_patient, choice
@@ -44,14 +46,13 @@ def main():
     view_get_info()
     if 'valid_key' in st.session_state and st.session_state['valid_key']:
         run_setup()
-        prompt = ''
+        info_json = defaultdict(int)
 
         new_patient, choice = choose_patient()
-        if new_patient:
-            new_patient_form(choice)
-        else:
-            demo_info = {'name': 'Bruce'}
-            new_session()
+        if not new_patient:
+            info_json = get_user_entry(choice)
+        patient_form(choice,info_json)
+        new_session(info_json)
 
 
     

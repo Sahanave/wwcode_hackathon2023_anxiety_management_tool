@@ -1,5 +1,0 @@
-name: frontend
-channels:
-  - conda-forge
-dependencies:
-  - streamlit=1.27.2
