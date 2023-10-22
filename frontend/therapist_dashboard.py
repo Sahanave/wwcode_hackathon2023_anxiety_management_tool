@@ -25,7 +25,7 @@ def choose_patient():
     new_patient = False
 
     # Dropdown
-    choice = st.selectbox('Choose an option:', options)
+    choice = st.selectbox('Patient Name:', options)
 
     # If 'Other' is selected, show a text input
     if choice == 'new patient':
