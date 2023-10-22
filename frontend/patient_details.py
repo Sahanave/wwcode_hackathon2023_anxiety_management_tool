@@ -13,10 +13,10 @@ def patient_form(input_json):
             city = st.text_area('City:', input_json['city'])
             input_json['city'] = city
 
-            languages = st.text_area('languages spoken:', input_json['languages'])
+            languages = st.text_area('Languages Spoken:', input_json['languages'])
             input_json['languages'] = languages
 
-            academic_background = st.text_area('academic_background:', input_json['academics'])
+            academic_background = st.text_area('Academic Background:', input_json['academics'])
             input_json['academics'] = academic_background
 
             family = st.text_area('Family:', input_json['family'])
