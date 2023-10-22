@@ -1,14 +1,16 @@
 
 from backend.therapist_dashboard import generate_response
-from setup.database import get_patients_previous_sessions
+from setup.database import get_patients_previous_sessions, insert_into_session
 
 
 def new_session(demo_info):
     import streamlit as st
     other_button = st.button('Previous sessions')
+
     if other_button:
             previous_sessions = get_patients_previous_sessions(demo_info['name'])
             st.dataframe(previous_sessions)
+
     with st.form('my_form'):
                 session_info = {}
                 
@@ -34,3 +36,4 @@ def new_session(demo_info):
                     response = generate_response(prompt,openai_api_key)
                     st.dataframe(response)
                     session_info['activity'] = response.to_json()
+                    insert_into_session(session_info)
