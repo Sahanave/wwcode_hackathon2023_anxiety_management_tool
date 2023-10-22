@@ -31,7 +31,7 @@ def generate_response(input_text, openai_api_key, model="gpt-4"):
     messages=[
         {
         "role": "system",
-        "content": "Create a list of JSON object for each day. Each JSON object should have Day, cost effective Activity, Time required "
+        "content": "Create a list of JSON object for each day. Each JSON object should have Day, Activity, Time required and Examples of what do for that activity "
         },
         {
         "role": "user",
