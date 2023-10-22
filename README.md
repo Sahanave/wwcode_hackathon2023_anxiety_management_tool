@@ -1,6 +1,6 @@
 # Anxiety Management Platform using AI
 
- Our project focuses on developing a personalized AI-driven platform for anxiety management.
+ Our project focuses on developing a personalized AI-driven platform for anxiety management. I forked starter code from an earlier repo (https://github.com/mafda/ml_with_fastapi_and_streamlit)
 
 ## Table of Contents
 
