@@ -51,10 +51,10 @@ def get_patients_previous_sessions(name):
         patients
     INNER JOIN 
         sessions ON patients.id = sessions.patient_id
-    ORDER BY
-        sessions.session_date
     WHERE 
-        patients.name = {name}; 
+        patients.name = '{name}'
+    ORDER BY
+        sessions.session_date; 
     """
     dataframe = pd.read_sql(sql,conn)
     return dataframe

@@ -32,8 +32,10 @@ The main goal of this platform is to provide a tailored approach to anxiety mana
 ```shell
 (base)$: git clone https://github.com/Sahanave/wwcode_hackathon2023_anxiety_management_tool.git
 (base)$: cd wwcode_hackathon2023_anxiety_management_tool
-(base)$: pip install -r requirements.txt
-(base)$: streamlit run app.py
+(base)$: conda create -n ai-tool-testing python=3.8
+(base)$:conda activate ai-tool-testing
+(ai-tool-testing)$: pip install -r requirements.txt
+(ai-tool-testing)$: streamlit run app.py
 
 ```
 - Access the interface at [http://localhost:8501](http://localhost:8501)

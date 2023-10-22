@@ -1,10 +1,9 @@
 import setup.database as setup_db
 
-def patient_form(name,input_json):
+def patient_form(input_json):
     import streamlit as st
 
     with st.form('patient_form'):
-            input_json['name'] = name
 
             st.markdown("## Demographics")
             
