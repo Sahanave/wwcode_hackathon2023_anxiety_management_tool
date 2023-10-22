@@ -32,4 +32,7 @@ def new_session(demo_info):
 
                     demo_info.update(session_info)
                     prompt = str(demo_info)
-                    st.dataframe(generate_response(prompt,openai_api_key))
+                    response = generate_response(prompt,openai_api_key)
+                    st.dataframe(response)
+                    session_info['activity'] = response.to_json()
+                    

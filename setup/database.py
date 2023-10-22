@@ -74,10 +74,11 @@ def insert_into_session(session_info):
     learning = session_info['learning']
     availability_time = session_info['availability_time']
     weekly_budget = session_info['weekly_budget']
+    session_activity = session_info['activities']
     
     c.execute("""
-            INSERT INTO sessions (patient_name, patient_id, session_date, notes, learning, availability_time,  budget) 
-            VALUES (?, ?, ?, ?, ?, ?) """,(patient_name, patient_id, session_date, notes, learning, availability_time,weekly_budget))
+            INSERT INTO sessions (patient_name, patient_id, session_date, notes, learning, availability_time,  budget,activities) 
+            VALUES (?, ?, ?, ?, ?, ?) """,(patient_name, patient_id, session_date, notes, learning, availability_time,weekly_budget,session_activity))
 
 
     conn.commit()
@@ -132,6 +133,7 @@ def main():
                                     learning TEXT,
                                     availability_time INTEGER,
                                     budget INTERGER,
+                                    activities JSON,
                                     FOREIGN KEY (patient_id) REFERENCES patients (id)
                                 );"""
 
