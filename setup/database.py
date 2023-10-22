@@ -51,10 +51,10 @@ def get_patients_previous_sessions(name):
         patients
     INNER JOIN 
         sessions ON patients.id = sessions.patient_id
-    ORDER BY
-        sessions.session_date
     WHERE 
-        patients.name = {name}; 
+        patients.name = '{name}'
+    ORDER BY
+        sessions.session_date; 
     """
     dataframe = pd.read_sql(sql,conn)
     return dataframe
@@ -65,19 +65,20 @@ def insert_into_session(session_info):
     c = conn.cursor()
 
     # Insert a new event with a date
-    patient_name = session_info['patient_name']
+    patient_name = session_info['name']
     user_demo_data = get_user_entry(patient_name)
-    patient_id = user_demo_data['patient_id']
+    patient_id = user_demo_data['id']
     today = date.today()
     session_date = str(today)
     notes = session_info['insight']
     learning = session_info['learning']
     availability_time = session_info['availability_time']
     weekly_budget = session_info['weekly_budget']
+    session_activity = session_info['activity']
     
     c.execute("""
-            INSERT INTO sessions (patient_name, patient_id, session_date, notes, learning, availability_time,  budget) 
-            VALUES (?, ?, ?, ?, ?, ?) """,(patient_name, patient_id, session_date, notes, learning, availability_time,weekly_budget))
+            INSERT INTO sessions (patient_name, patient_id, session_date, notes, learning, availability_time,  budget,activities) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?) """,(patient_name, patient_id, session_date, notes, learning, availability_time,weekly_budget,session_activity))
 
 
     conn.commit()
@@ -125,13 +126,14 @@ def main():
     
     create_session_table = """CREATE TABLE IF NOT EXISTS sessions (
                                     id integer PRIMARY KEY,
-                                    patient_name text UNIQUE,
+                                    patient_name UNIQUE,
                                     patient_id INTEGER,
                                     session_date TEXT,
                                     notes TEXT,
                                     learning TEXT,
                                     availability_time INTEGER,
                                     budget INTERGER,
+                                    activities JSON,
                                     FOREIGN KEY (patient_id) REFERENCES patients (id)
                                 );"""
 

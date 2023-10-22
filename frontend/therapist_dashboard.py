@@ -51,7 +51,8 @@ def main():
         new_patient, choice = choose_patient()
         if not new_patient:
             info_json = get_user_entry(choice)
-        patient_form(choice,info_json)
+        info_json['name'] = choice
+        info_json = patient_form(info_json)
         new_session(info_json)
 
 

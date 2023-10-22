@@ -1,6 +1,6 @@
 # Anxiety Management Platform using AI
 
- Our project focuses on developing a personalized AI-driven platform for anxiety management.
+ Our project focuses on developing a personalized AI-driven platform for anxiety management. I forked starter code from an earlier repo (https://github.com/mafda/ml_with_fastapi_and_streamlit)
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 ## Overview of the Project
 
-The main goal of this platform is to provide a tailored approach to anxiety management by leveraging the power of AI. Using Streamlit for interface design, FastAPI for backend services, and Hugging Face for NLP functionalities, we aim to provide therapists and patients a tool that is both engaging and effective.
+The main goal of this platform is to provide a tailored approach to anxiety management by leveraging the power of AI. Using Streamlit for interface design, OpenAI and SQLite for backend services, we aim to provide therapists and patients a tool that is both engaging and effective.
 
 ## Why Streamlit?
 
@@ -22,6 +22,7 @@ The main goal of this platform is to provide a tailored approach to anxiety mana
 
 
 ### Architecture
+![Sample Outcome](assets/arch_diagram.png)
 
 
 ### Setting Up the Project
@@ -31,14 +32,12 @@ The main goal of this platform is to provide a tailored approach to anxiety mana
 ```shell
 (base)$: git clone https://github.com/Sahanave/wwcode_hackathon2023_anxiety_management_tool.git
 (base)$: cd wwcode_hackathon2023_anxiety_management_tool
+(base)$: conda create -n ai-tool-testing python=3.8
+(base)$:conda activate ai-tool-testing
+(ai-tool-testing)$: pip install -r requirements.txt
+(ai-tool-testing)$: streamlit run app.py
+
 ```
-
-- Launch the platform:
-
-```shell
-$ docker-compose up
-```
-
 - Access the interface at [http://localhost:8501](http://localhost:8501)
 
 ## Outcome & Screenshots
@@ -48,6 +47,3 @@ $ docker-compose up
 
 ![Sample Outcome](assets/streamlit-output-sample.png)
 
-## Final Thoughts
-
-Combining Streamlit, FastAPI, and Hugging Face provides a swift and efficient way to prototype, create MVPs, and launch applications in a minimal timeframe. This blend proves invaluable for projects aiming for rapid deployment and immediate user feedback.
